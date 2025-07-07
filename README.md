@@ -34,18 +34,20 @@ This assistant is ideal for use cases such as:
 ```
 smart-research-assistant/
 ├── app/
-│   ├── api.py                 # FastAPI routes
-│   ├── assistant.py           # RAG pipeline orchestrator
-│   ├── config.py              # Environment & key loader
-│   ├── document_processor.py  # PDF loader and splitter
-│   ├── formatter.py           # Response formatting with sources
-│   ├── rag_chain.py           # QA chain with ConversationalRetrievalChain
-│   └── vector_store.py        # ChromaDB handler
+│   ├── api.py                   # FastAPI routes
+│   ├── assistant.py             # RAG pipeline orchestrator
+│   ├── config.py                # Environment & key loader
+│   ├── document_processor.py    # PDF loader and splitter
+│   ├── formatter.py             # Response formatting with sources
+│   ├── rag_chain.py             # QA chain with ConversationalRetrievalChain
+│   └── vector_store.py          # ChromaDB handler
 ├── data/
-│   ├── docs/                  # User-uploaded documents
-│   └── temp_docs/             # Temporary upload storage
-├── .env                       # API keys and settings
-├── main.py                    # CLI interface (optional)
+│   ├── docs/                    # User-uploaded documents
+│   └── temp_docs/               # Temporary upload storage
+├── notebooks/
+│   └── document_ingestion.ipynb # Notebook demonstrating RAG pipeline usage
+├── .env                         # API keys and settings
+├── main.py                      # CLI interface (optional)
 ├── requirements.txt
 └── README.md
 ```
@@ -96,7 +98,17 @@ python main.py
 ```
 Ask questions from the terminal after documents are indexed.
 
+## Notebook Example
+A Jupyter notebook is available for quick testing and experimentation:
+
+**`notebooks/document_ingestion.ipynb`** demonstrates how to:
+- Load and split documents
+- Create and persist vector index
+- Query using the RAG pipeline
+
+This is helpful for debugging, prototyping, and understanding each component before running the full backend.
+
 ---
 
-## 🙋‍♀️ Acknowledgements
+### Acknowledgements
 Built using [LangChain](https://github.com/langchain-ai/langchain)
